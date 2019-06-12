@@ -13,16 +13,16 @@ namespace Laba11
         {
             Capacity = 8;
             Count = 0;
-            Keys = new List<K>();
-            Values = new List<T>();
+            Keys = new List<K>(Capacity);
+            Values = new List<T>(Capacity);
         }
 
         public MySortedDictionary(int capacity)
         {
             Capacity = capacity;
             Count = 0;
-            Keys = new List<K>();
-            Values = new List<T>();
+            Keys = new List<K>(Capacity);
+            Values = new List<T>(Capacity);
         }
 
         public MySortedDictionary(MySortedDictionary<K, T> mySortedDictionary)

@@ -11,7 +11,7 @@ namespace Laba11
         static void Main(string[] args)
         {
             #region Task 1
-            SortedList SortedListPeople = new SortedList()
+            /*SortedList SortedListPeople = new SortedList()
              {
                  {"ИвинаАлена", new Administration("Алена", "Ивина", Gender.Female, 2) },
                  {"БетевИван", new Administration("Иван", "Бетев", Gender.Male, 5) },
@@ -63,11 +63,11 @@ namespace Laba11
             }
 
 
-            SortedList newSortedList = (SortedList)SortedListPeople.Clone();
+            SortedList newSortedList = (SortedList)SortedListPeople.Clone();*/
             #endregion
 
             #region Task 2
-            List<Person> listPeople = new List<Person>()
+            /*List<Person> listPeople = new List<Person>()
             {
                 new Administration("Алена", "Ивина", Gender.Female, 2),
                 new Administration("Иван", "Бетев", Gender.Male, 5) ,
@@ -76,7 +76,6 @@ namespace Laba11
             };
 
             Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine("TASK 2");
             Console.WriteLine("*****************---------------------++++++++++++++++++++++////////////////");
             Console.ForegroundColor = ConsoleColor.White;
 
@@ -115,15 +114,16 @@ namespace Laba11
 
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("*****************---------------------++++++++++++++++++++++////////////////");
-            Console.WriteLine("NumberGotOfWorking");
+            Console.WriteLine("Число рабочих с категорией Бог.");
             Console.ForegroundColor = ConsoleColor.White;
-            Console.WriteLine(NumberGotOfWorking(listPeople) + " of Got of Working.");
+            Console.WriteLine(NumberGodOfWorking(listPeople));
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("*****************---------------------++++++++++++++++++++++////////////////");
-            Console.ForegroundColor = ConsoleColor.White;
+            Console.ForegroundColor = ConsoleColor.White;*/
             #endregion
 
             #region Task 3
+
             MySortedDictionary<string, Person> mySortedDictionary = new MySortedDictionary<string, Person>();
             mySortedDictionary.Add("ИвинаАлена", new Administration("Алена", "Ивина", Gender.Female, 2));
             mySortedDictionary.Add("БетевИван", new Administration("Иван", "Бетев", Gender.Male, 5));
@@ -138,19 +138,25 @@ namespace Laba11
             Console.WriteLine();
 
             Console.WriteLine($"ContainsKey(\"ГаукДана\"): {mySortedDictionary.ContainsKey("ГаукДана")}");
-            Console.WriteLine($"ContainsValue(): {mySortedDictionary.ContainsValue(new Administration("Иван", "Бетев", Gender.Male, 5))}");
+            Console.WriteLine();
+            Console.WriteLine($"ContainsValue(new Administration(\"Иван\", \"Бетев\", Gender.Male, 5)): {mySortedDictionary.ContainsValue(new Administration("Иван", "Бетев", Gender.Male, 5))}");
+            Console.WriteLine();
             Console.WriteLine($"GetByIndex(2): {mySortedDictionary.GetByIndex(2)}");
+            Console.WriteLine();
             Console.WriteLine($"GetKey(3): {mySortedDictionary.GetKey(3)}");
+            Console.WriteLine();
             Console.WriteLine($"IndexOfKey(\"ИвановАндрей\"): {mySortedDictionary.IndexOfKey("ИвановАндрей")}");
-            Console.WriteLine($"IndexOfValue(): {mySortedDictionary.IndexOfValue(new Administration("Иван", "Бетев", Gender.Male, 5))}");
+            Console.WriteLine();
+            Console.WriteLine($"IndexOfValue(new Administration(\"Иван\", \"Бетев\", Gender.Male, 5)): {mySortedDictionary.IndexOfValue(new Administration("Иван", "Бетев", Gender.Male, 5))}");
+            Console.WriteLine();
             mySortedDictionary.SetByIndex(2, new Engineer("Петр", "Ильин", Gender.Male, Category.God));
-            Console.WriteLine($"SetByIndex(2, new Engineer(\"Петр\", \"Ильин\", Gender.Male, Category.God): {mySortedDictionary}");
+            Console.WriteLine($"SetByIndex(2, new Engineer(\"Петр\", \"Ильин\", Gender.Male, Category.God): \n{mySortedDictionary}");
             mySortedDictionary.RemoveAt(2);
-            Console.WriteLine($"RemoveAt(2): {mySortedDictionary}");
+            Console.WriteLine($"RemoveAt(2): \n{mySortedDictionary}");
             mySortedDictionary.Remove(new Administration("Иван", "Бетев", Gender.Male, 5));
-            Console.WriteLine($"Remove(): {mySortedDictionary}");
+            Console.WriteLine($"Remove(): \n{mySortedDictionary}");
             mySortedDictionary.Clear();
-            Console.WriteLine($"Clear(): {mySortedDictionary}");
+            Console.WriteLine($"Clear(): \n{mySortedDictionary}");
             #endregion
 
             Console.ReadKey();
@@ -170,7 +176,6 @@ namespace Laba11
             }
             return AdminSortList;
         }
-
         static SortedList GetFemale(SortedList sortedList)
         {
             SortedList FemaleSortList = new SortedList();
@@ -183,7 +188,6 @@ namespace Laba11
             }
             return FemaleSortList;
         }
-
         static SortedList GetExperianceBetter(SortedList sortedList, int experianceMin)
         {
             SortedList ExperSortList = new SortedList();
@@ -211,7 +215,6 @@ namespace Laba11
             }
             return engen;
         }
-
         static int NumberMale(List<Person> people)
         {
             int num = 0;
@@ -224,8 +227,7 @@ namespace Laba11
             }
             return num;
         }
-
-        static int NumberGotOfWorking(List<Person> people)
+        static int NumberGodOfWorking(List<Person> people)
         {
             int num = 0;
             foreach (Person per in people)
